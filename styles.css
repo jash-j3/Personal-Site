@@ -504,7 +504,7 @@ body {
   height: 5px;
   border-radius: 5px;
   width: 0%;
-  background:rgba(102, 169, 191, 0.3);
+  background: rgba(102, 169, 191, 0.3);
   z-index: 2222222;
 }
 
@@ -517,7 +517,7 @@ body {
     justify-content: center;
     align-content: center;
   }
- 
+
   .languages-ik {
     flex-direction: column;
   }
@@ -574,9 +574,18 @@ body {
     height: 0;
   }
 
-  #scroll{
+  #scroll {
     background: #154cff;
     margin-bottom: 1px;
+  }
+
+  .ecell1{
+    background: white;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
   }
 }
 
@@ -595,13 +604,11 @@ body {
   background: #2b3035;
 }
 
-::-webkit-scrollbar-thumb{
-  background:linear-gradient(transparent,#ff15ff);
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #ff15ff);
   border-radius: 25px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-  background:linear-gradient(transparent,#15ff5f);
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #15ff5f);
 }
-
-
