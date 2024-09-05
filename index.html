@@ -16,9 +16,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
+    <div id="preloader">
+      <div id="container" class="container-preloader">
+        <div class="animation-preloader">
+          <div class="spinner"></div>
+          <div class="txt-loading">
+            <span preloader-text="J" class="characters">J</span>
+            <span preloader-text="C" class="characters">C</span>
+            <span preloader-text="U" class="characters">U</span>
+            <span preloader-text="B" class="characters">B</span>
+            <span preloader-text="E" class="characters">E</span>
+          </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+    </div>
     <nav class="navbar-custom" id="navbarCustom">
       <div class="navbar-container">
         <div class="collapse navbar-collapse" id="navbarContent">
@@ -100,11 +117,10 @@
         <div class="det1">
           <div class="det-lng item">
             <h1>
-              Session for <span class="lambda">Lambda</span> <br />
-              Web Development
+              Session for Web Development by <span class="lambda">Lambda</span>
+              <br />
             </h1>
-
-            <p>
+            <p class="description">
               I have made this Website for the Session of the Web Development of
               <span class="lambda1">Lambda</span>, IITH. This simple website
               just resembles a personal blog page giving information about
@@ -291,14 +307,14 @@
                 </div>
               </div>
               <div class="card">
-                <a href="https://react.dev/"
+                <a href="https://flutter.dev/"
                   ><img
-                    src="react-logo.png"
+                    src="pngwing.com.png"
                     class="card-img-top"
-                    alt="react-logo"
+                    alt="flutter-logo"
                 /></a>
                 <div class="card-body">
-                  <p class="card-text">React JS</p>
+                  <p class="card-text">Flutter</p>
                 </div>
               </div>
               <div class="card">
@@ -368,5 +384,31 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="script.js"></script>
+    <script>
+      $(document).ready(function () {
+        setTimeout(function () {
+          $("#container").addClass("loaded");
+
+          if ($("#container").hasClass("loaded")) {
+            $("#invisible").removeClass("invisible");
+            $("#scroll").removeClass("invisible");
+            $("#preloader")
+              .delay(9000)
+              .queue(function () {
+                $(this).remove();
+              });
+          }
+        }, 3000);
+      });
+    </script>
+    <script>
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop(),
+          dh = $(document).height(),
+          wh = $(window).height();
+        scrollPercent = (scroll / (dh - wh)) * 100;
+        $("#scroll").css("width", scrollPercent + "%");
+      });
+    </script>
   </body>
 </html>
