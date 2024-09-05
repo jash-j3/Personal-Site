@@ -15,6 +15,7 @@ body {
   position: -webkit-sticky; /*safari configuration*/
   position: sticky;
   top: 0;
+  font-family: poppins, Helvetica, sans-serif;
   z-index: 1000;
 }
 .navbar-container {
@@ -508,6 +509,10 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .navbar-custom {
+    display: none;
   }
 }
 
