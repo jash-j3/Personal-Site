@@ -8,7 +8,49 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-.ecell {
+.navbar-custom {
+  background-color: #333;
+  padding: 5px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky; /*safari configuration*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-item {
+  color: #ffffff;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.nav-item:hover {
+  background-color: #555555;
+  border-radius: 5px;
+}
+.active-link {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+.nav-toggle {
+  background-color: #007bff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.nav-toggle .toggle-icon {
+  background-image: url("data:image/svg+xml;...");
+  color: #ffffff;
+}
+.lambda {
   font-size: 3rem;
   font-weight: 600;
   background: linear-gradient(
@@ -25,7 +67,7 @@ body {
   font-style: normal;
 }
 
-.ecell1 {
+.lambda1 {
   background: linear-gradient(
     90deg,
     #a929ff 10%,
@@ -42,157 +84,6 @@ body {
 .det-lng h1 {
   font-size: 3rem;
   font-weight: 600;
-}
-.container-preloader {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 900;
-}
-.container-preloader .animation-preloader {
-  position: absolute;
-  z-index: 100;
-}
-
-.container-preloader .animation-preloader .spinner {
-  animation: spinner 1s infinite linear;
-  border-radius: 50%;
-  border: 7px solid rgba(0, 0, 0, 0.2);
-  border-top-color: rgba(255, 255, 255, 0.1);
-  height: 5em;
-  margin: 0 auto 3.5em auto;
-  width: 5em;
-}
-.container-preloader .animation-preloader .txt-loading {
-  font: bold 5em "poppins", sans-serif;
-  text-align: center;
-  user-select: none;
-}
-.container-preloader .animation-preloader .txt-loading .characters:before {
-  animation: characters 4s infinite;
-  content: attr(preloader-text);
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transform: rotateY(-90deg);
-  color: #223c43;
-}
-.container-preloader .animation-preloader .txt-loading .characters {
-  color: #acc3c8;
-  position: relative;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(2):before {
-  animation-delay: 0.2s;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(3):before {
-  animation-delay: 0.4s;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(4):before {
-  animation-delay: 0.6s;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(5):before {
-  animation-delay: 0.8s;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(6):before {
-  animation-delay: 1s;
-}
-.container-preloader
-  .animation-preloader
-  .txt-loading
-  .characters:nth-child(7):before {
-  animation-delay: 1.2s;
-}
-.container-preloader .loader-section {
-  background-image: url(main_bg_3.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  width: calc(50% + 1px);
-}
-.container-preloader .loader-section.section-left {
-  left: 0;
-}
-.container-preloader .loader-section.section-right {
-  right: 0;
-}
-
-.loaded .animation-preloader {
-  opacity: 0;
-  transition: 0.3s ease-out;
-}
-
-.loaded .loader-section.section-left {
-  transform: translateX(-101%);
-  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-.loaded .loader-section.section-right {
-  transform: translateX(101%);
-  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-
-@keyframes spinner {
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes characters {
-  0%,
-  75%,
-  100% {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-  25%,
-  50% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .container-preloader .animation-preloader .spinner {
-    height: 8em;
-    width: 8em;
-  }
-
-  .container-preloader .animation-preloader .txt-loading {
-    font: bold 3.5em "Montserrat", sans-serif;
-  }
-}
-@media screen and (max-width: 500px) {
-  .container-preloader .animation-preloader .spinner {
-    height: 7em;
-    width: 7em;
-  }
-
-  .container-preloader .animation-preloader .txt-loading {
-    font: bold 2em "Montserrat", sans-serif;
-  }
 }
 .origin {
   text-decoration: none;
@@ -309,6 +200,38 @@ body {
 .mailme {
   color: white;
 }
+.custom-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ac0e7a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #4e2188;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.custom-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.custom-button a:hover {
+  text-decoration: none;
+}
+
+.custom-button + .custom-button {
+  margin-left: 15px;
+}
 
 .box2 {
   text-align: center;
@@ -332,8 +255,8 @@ body {
 }
 
 .card-img-top {
-  height: 10vh;
-  width: 10vw;
+  height: 18vh;
+  width: 8vw;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -489,7 +412,7 @@ body {
   margin-bottom: 40px;
 }
 
-.experinces {
+.experiences {
   display: flex;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
@@ -579,25 +502,14 @@ body {
     margin-bottom: 1px;
   }
 
-  .ecell1{
+  .ecell1 {
     background: white;
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
-
-/* @media all and (max-device-width:503px){
-  .card{
-    width: 7rem;
-  }
-  .card-img-top{
-    height: 5vh;
-    width: 5vw;
-  }
-} */
 
 ::-webkit-scrollbar {
   width: 7.5px;
